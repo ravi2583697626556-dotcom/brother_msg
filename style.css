@@ -239,17 +239,19 @@ body {
 }
 @keyframes spinRing { to { filter: hue-rotate(30deg); } }
 
-.portrait-photo {
-  width: 100%; height: 100%;
+.portrait-clip {
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
+  overflow: hidden;
+  background: var(--cream);
+}
+.portrait-photo {
+  width: 100%;
+  height: 100%;
   display: block;
   object-fit: cover;
   object-position: center top;
-  background: var(--cream);
-}
-.portrait-photo.portrait-missing {
-  /* fallback tint when img.jpeg is absent */
-  background: linear-gradient(160deg, #fde8ed, #f4c8d4);
 }
 
 /* orbiting stars */
