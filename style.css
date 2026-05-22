@@ -236,22 +236,26 @@ body {
     0 12px 50px rgba(201,77,110,0.4),
     0 0 80px rgba(201,151,58,0.15);
   animation: spinRing 12s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 @keyframes spinRing { to { filter: hue-rotate(30deg); } }
 
-.portrait-clip {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--cream);
-}
 .portrait-photo {
-  width: 100%;
-  height: 100%;
+  width: 138px;
+  height: 138px;
+  border-radius: 50%;
   display: block;
   object-fit: cover;
   object-position: center top;
+  background: var(--cream);
+  flex-shrink: 0;
+}
+.portrait-photo.portrait-missing {
+  /* fallback tint when img.jpeg is absent */
+  background: linear-gradient(160deg, #fde8ed, #f4c8d4);
 }
 
 /* orbiting stars */
